@@ -11,7 +11,7 @@ class GraphTest(unittest.TestCase):
         self.assertEqual(graph.node_size, 5)
 
     def test_graph_directed(self):
-        self.assertEqual(graph.is_directed, False)
+        self.assertEqual(graph.is_directed, True)
 
 
 if __name__ == '__main__':
