@@ -6,6 +6,7 @@ class Graph:
         self.create_adjacent_list()
 
     def create_adjacent_list(self):
+        self.adjacent_list.append([])
         for i in range(self.node_size):
             self.adjacent_list.append([])
 
@@ -19,3 +20,16 @@ class Graph:
             if len(self.adjacent_list[u]):
                 for v in self.adjacent_list[u]:
                     print(u, '->', v)
+
+    def dfsUtil(self, u, vis, order: list):
+        vis[u] = 1
+        order.append(u)
+        for v in self.adjacent_list[u]:
+            if not vis[v]:
+                self.dfsUtil(v, vis, order)
+
+    def dfs(self, u):
+        vis = [0] * (self.node_size + 1)
+        order = []
+        self.dfsUtil(u, vis, order)
+        return order
