@@ -30,6 +30,11 @@ class GraphTest(unittest.TestCase):
         actual = graph.dfs(1)
         self.assertEqual(expected, actual)
 
+    def test_bfs(self):
+        expected = [1, 6, 3, 5, 2, 4]
+        actual = graph.bfs(1)
+        self.assertEqual(expected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()
